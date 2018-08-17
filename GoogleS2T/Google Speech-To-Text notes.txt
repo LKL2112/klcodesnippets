@@ -1,0 +1,27 @@
+Notes on Google Speech-To-Text:
+
+A Google Cloud Platform account is required to use the Speech-To-Text client.  Once an account is established, a key can be downloaded
+that allows access to the Google Cloud Platform.  This key could be stored as another Charter property and thus easily accessed by the 
+PROD implementation.
+
+Multiple languages can be specified as input.  We are not restricted to English.
+
+The Speech-To-Text client cannot handle MP3 or other lossy audio formats
+
+Automatic language detection isn't very good.  While you can specify a list of languages to consider for translation, the best way to get 
+an accurate transcription in the language of the audio is to transcribe the audio using each specified language and check for the one with
+the highest confidence rating.  Thus, we need to be careful deciding which languages we intend to use.
+
+Pricing is per month as follows:
+		0 - 60 minutes = free
+		60 - 1000000 minutes = $0.006 USD / 15 seconds
+		per Google:
+		This pricing is for applications on personal systems (e.g., phones, tablets, laptops, desktops). Please contact us for approval and pricing 
+		to use the Speech-to-Text API on embedded devices (e.g., cars, TVs, appliances, or speakers).
+		
+		Each request is rounded up to the nearest increment of 15 seconds. For example, if you make three separate requests, each containing 7 
+		seconds of audio, you are billed $0.018 USD for 45 seconds (3 × 15 seconds) of audio. Fractions of seconds are included when rounding up 
+		to the nearest increment of 15 seconds. That is, 15.14 seconds are rounded up and billed as 30 seconds.
+		
+		Monthly usage is capped at 1 million minutes per month. For usage above 1 million minutes of audio per month, we would like to understand 
+		more about your needs. Please submit a Cloud Speech-to-Text Quota Request for your project.  

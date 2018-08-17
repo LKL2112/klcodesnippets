@@ -1,0 +1,21 @@
+Amazon Transcribe is very new.  Generally available as of April 4, 2018, we may be beholden to a work in progress if we go this route.
+With such a new platform, changes are inevitable and that could mean API changes to support fundamental audio processing changes.
+		
+Amazon Transcribe supports a variety of lossless and lossy formats such as MP3.  Support for MP3 means no changes to our current 
+voicemail encoding and slightly less storage requirements compared to FLAC or other lossless audio formats.
+
+As of August 15, 2018, Transcribe only works with English and Spanish
+
+Uses S3 as the storage location for the voicemail audio files to be transcribed.
+
+Considerable configuration needed to allow access to S3 from the Transcribe console.  Typical of Amazon, configuration issues create
+development delays.  As long as we have a team dedicated to Amazon configuration, this solution is viable.
+
+Using the Amazon transcribe console, transcribing audio takes roughly 1 minute.  Thankfully, the transcription process is asynchronous.
+According to Amazon, they are working to improve the processing speed. 
+
+Documentation on the Amazon Transcribe API is very limited and there are few entries on the Amazon Transcribe forum or other software
+development sites.
+
+Amazon Transcribe pricing is as follows:		
+		$0.0004 per second.  Usage is billed in 1 second increments with a minimum per request charge of 15 seconds
